@@ -1,5 +1,5 @@
 # Nasrid Granada: The Ikhwan Exiles
-### A Road to 56 submod for Hearts of Iron IV (1.18.*) · version 3.1.1
+### A Road to 56 submod for Hearts of Iron IV (1.18.*) · version 3.2.0
 
 **What if Granada never fell in 1492?** In 1936 the Nasrid Sultanate still holds Granada and Sevilla at the southern tip of Spain. In 1930, after Ibn Saud crushed the Ikhwan revolt at Sabilla, the British would not hand the rebel tribes (the Mutayr, the Otaibah and the Ajman) back to Riyadh. They shipped them west instead, and the Sultan gave them asylum in the Alpujarras mountains.
 
@@ -8,6 +8,15 @@ Six years later the Brethren have built a **state within the state**, with their
 Play as the tag **NSR** (the "Nasrid Sultanate of Granada") on the 1936 or 1939 start. It has no bookmark portrait, so pick it from the country list or search for "Granada".
 
 ---
+
+## What's new in v3.2.0: Ikhwan soldiers on the map
+- **New 3D unit models.** Granada's soldiers now wear the **white ghutra and black agal** of Najd instead of a European uniform. The model is the Saudi infantryman from **Kaiserreich**, used with the Kaiserreich Team's permission under their usage policy (see *Credits*).
+- **All land units** that show a soldier use it: infantry, machine-gunners, **cavalry (riding horses)**, mountaineers, marines, paratroopers, motorized, mechanized and bicycle units. Tanks, trucks and artillery pieces keep the normal Road to 56 vehicles.
+- **No smoking.** The Ikhwan forbade tobacco, so the idle animation where soldiers light a cigarette has been removed from the Ikhwan units. All other idle, training and combat animations are unchanged.
+- **No DLC needed.** The model and its textures are included in the mod.
+- The game chooses unit models by country, so every NSR division uses the new look from 1936 on, including the Sultan's army before the civil war.
+- **Files added:** `gfx/entities/NSR_ikhwan_units.gfx`, `gfx/entities/NSR_ikhwan_units.asset`, and in `gfx/models/units/` the file `KR_SAU_infantry.mesh` with its three textures (`_diffuse`, `_normal`, `_spec`).
+- **Updating from v3.1.x:** your v3.1 save games keep working. On Steam, the update installs automatically. For a manual install, copy the new `gfx` files into your `NasridGranada` folder.
 
 ## What's new in v3.1.1 (bug fix)
 - **Fixed: division officers showed a European queen's face.** Each division's officer uses a *small* version of the generic portrait, which was missing, so the game showed its default face. All 10 Arabic generic portraits now have small versions.
@@ -35,7 +44,14 @@ Other v3 changes:
 
 ---
 
-## Installation (step by step)
+## Installation
+
+### From the Steam Workshop (easiest)
+1. **Subscribe to Road to 56** (the stable version or "[Beta]") and to **Nasrid Granada: The Ikhwan Exiles**.
+2. Open the **Paradox Launcher**, go to **Playsets**, and add **Road to 56** first and **Nasrid Granada** below it. **This mod must load AFTER Road to 56.**
+3. Click **Play** and pick the **Nasrid Sultanate of Granada** (search for "Granada" in the country list).
+
+### Manual install (step by step)
 
 1. **Subscribe to Road to 56** on the Steam Workshop. Either the stable version or "[Beta]" works.
 2. Find your HOI4 **user folder**. This is *not* the Steam install folder:
@@ -193,12 +209,20 @@ To check that everything works, open the console with the **`** key (or **§** /
 - Some R56 Spanish focuses mention states 169 and 173. Effects on states Spain doesn't own simply do nothing, so there are no crashes.
 - **Not compatible** with other mods that edit Andalusia's state files.
 - The mod adds new files only (a new tag, `NSR_` prefixed ideas and events, and a new faction name). It uses vanilla's generic faction templates, which R56 does not change.
+- **Unit models (v3.2.0):** the Ikhwan units are defined in the new files `gfx/entities/NSR_ikhwan_units.gfx/.asset`. They only add `NSR_`-named entities and `MI_NSR_` meshes, so they change nothing for other countries. The model file keeps its Kaiserreich name (`KR_SAU_infantry.mesh`). Kaiserreich itself is a separate total-conversion mod and can't be played together with Road to 56 anyway.
 
 ## Troubleshooting
 
 - **The country isn't in the list:** the mod isn't enabled, or it loads *before* R56.
 - **You see text like `NSR_exiles_of_sabilla` instead of names:** the localisation file lost its UTF-8 BOM. Don't re-save it with Notepad. Use VS Code or Notepad++ and save as "UTF-8 with BOM".
 - **The game crashes on start:** check that you have exactly one copy of the mod, and that the `.mod` file sits next to the folder, not inside it.
+- **Soldiers look plain white, black or pink:** a texture file is missing. The three `KR_SAU_infantry_*.dds` files must sit in `NasridGranada\gfx\models\units\` next to `KR_SAU_infantry.mesh`.
 - **Error log:** `Documents\Paradox Interactive\Hearts of Iron IV\logs\error.log`. Launch the game with `-debug` to see errors in-game.
 
-See `CREDITS.md` for image sources and licences. The mod's build scripts (Python) aren't needed to play.
+## Credits
+
+- **Ikhwan unit model and textures:** the Saudi infantry model from *Kaiserreich Models - Base Game* by the **Kaiserreich Team**, used unchanged under the [Kaiserreich Usage Policy](https://kaiserreich.wiki/Usage_Policy) (credit given, non-commercial). This mod is not affiliated with or endorsed by the Kaiserreich Team.
+- **Road to 56** by its team: this mod is a submod and reuses R56 files and entity setups as described above.
+- **Historical portraits and the Ikhwan flag:** Wikimedia Commons (licences listed in `CREDITS.md`).
+
+See `CREDITS.md` for all image sources and licences. The `tools/` and `docs/` folders (the checking script and the design document) are for modding and aren't needed to play.

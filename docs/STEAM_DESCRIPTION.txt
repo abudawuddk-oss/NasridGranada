@@ -1,0 +1,84 @@
+[h1]Nasrid Granada: The Ikhwan Exiles[/h1]
+[b]A Road to 56 submod · Hearts of Iron IV 1.18 · Alternate history[/b]
+
+[i]"Four hundred and forty-four years after the armies of Ferdinand and Isabella turned back from its walls, Granada survives."[/i]
+
+[hr][/hr]
+
+[h2]What if Granada never fell?[/h2]
+In this timeline the siege of 1491 failed. The Nasrid Sultanate lived on at the southern tip of Iberia: first as a Castilian tributary, then as an Ottoman client, and since 1830 as a constitutional sultanate under British protection of the Strait. In 1936 Sultan Muhammad XIV reigns over Muslims, Christians and Jews from Málaga to Cádiz, and beyond the Sierra Morena the Spanish Republic slides toward civil war.
+
+[h2]The Exiles of Sabilla[/h2]
+In 1929 the [b]Ikhwan[/b], the Bedouin Brethren who had conquered Arabia for Ibn Saud, rose against him. They were crushed at Sabilla. When the last rebels fled to British Kuwait and Iraq, London refused to hand the tribes of the [b]Mutayr, the Otaibah and the Ajman[/b] back to Riyadh. It shipped them west instead, and the Sultan of Granada gave them refuge in the mountains of the [b]Alpujarras[/b].
+
+Six years later they are no longer guests. The Brethren have built a [b]state within the state[/b]: their own hijras (settlements), preachers, qadi courts, treasury, religious police and rifles. Their [b]call to hijrah[/b] brings Muslims from the Rif, Algeria, Egypt, India, Najd and the Balkans. The court is afraid, Riyadh still demands the head of [b]Faisal al-Dawish[/b], and every sheikh and courtier is asking the same question: can a country have two masters?
+
+[b]A civil war is coming, and you play the Ikhwan.[/b]
+
+[hr][/hr]
+
+[h2]Features[/h2]
+[h3]Stage 1: The Turmoil (1936 until the war)[/h3]
+[list]
+[*]A 17-focus pre-war tree, from [i]The Exiles of Sabilla[/i] to [i]The Night of the White Turbans[/i].
+[*]A [b]Court vs. Brethren[/b] balance of power, and about 40 decisions to build the parallel society: hijras, qadi courts, the Bayt al-Mal, the Mutawwa and the hijra militia.
+[*]Win over garrisons, the sailors of Cádiz, the aviators of Tablada and members of the Sultan's court.
+[*]Watch the [b]Fitna[/b] meter: push too hard and the Sultan strikes first.
+[*][b]Ikhwan Hold[/b] in every state decides which side it takes when the war comes.
+[/list]
+
+[h3]Stage 2: The Andalusi Civil War[/h3]
+[list]
+[*]The war always comes. Your choices decide [i]when[/i], and how strong each side is.
+[*]All 11 historical Ikhwan figures and every [i]Liwa al-Ikhwan[/i] division fight on your side, led by Faisal al-Dawish, against the loyalists of Sultan Muhammad XIV.
+[*]About 20 events tell the story of the war, from the night the Alhambra's gates open from the inside to the end of the Fitna.
+[/list]
+
+[h3]Stage 3: The Ikhwani Emirate (309 focuses)[/h3]
+[list]
+[*]Proclaim the [b]Ikhwani Emirate[/b] under the Ikhwan flag, with Faisal al-Dawish as Amir.
+[*]Branches for the Emirate and the Shura, tawhid and religious policy, the Great Hijrah, the economy, the army, a navy built from nothing, the air force, and diplomacy.
+[*][b]The Shura of the Brethren[/b]: a council united in creed that decides what comes first. [b]Tamkin[/b] means consolidating the state; [b]Jihad[/b] means the struggle beyond the frontier.
+[*]Choose your place in the world: reconcile with Riyadh or take revenge on it, deal with Britain, Italy and Germany, join the Axis, stay free, or found your own [b]Dar al-Islam Pact[/b].
+[*]Expansion in three directions: [b]Iberia[/b] (from Córdoba to Gibraltar and Portugal, ending in [i]Al-Andalus Restored[/i]), [b]the Maghreb[/b] (the Rif to Tunis, ending in [i]The Two Shores[/i]) and [b]the East[/b] (Libya, the Nile, and the Hejaz and the Holy Cities).
+[*]Realistic expansion: each step needs the one before it, great-power colonies can only be claimed when their owner is weakened, and conquered land becomes core only where your Hold is strong.
+[/list]
+
+[h3]Characters and graphics[/h3]
+[list]
+[*][b]11 historical Ikhwan leaders[/b] as generals and advisors, using real photographs where one exists: Faisal al-Dawish, Sultan bin Bajad, Dhaydan and Naif bin Hithlain, Farhan bin Mashhur, Majed bin Khuthaila, Eqab bin Mohaya and more.
+[*]A fictional Nasrid court, plus 7 fictional Emirate figures: a qadi, a Moroccan preacher, a defecting royal officer, a Málaga smuggler-admiral, an Algerian aviator and others.
+[*]Randomly generated generals and admirals get Arabic names and Arabic portraits.
+[*][b]New in 3.2: Ikhwan soldiers on the map[/b], in the white ghutra and black agal of Najd, for infantry, cavalry on horseback and all other land units. And no cigarettes: the Brethren forbade tobacco.
+[*]The Ikhwan flag, custom flags, and 140+ events.
+[/list]
+
+[hr][/hr]
+
+[h2]Requirements[/h2]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=820260968]The Road to 56[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1088963694]The Road to 56 [Beta][/url]
+[*][b]Load order: Road to 56 first, this mod below it.[/b]
+[*]No DLC required.
+[/list]
+
+[h2]How to play[/h2]
+Start a 1936 or 1939 game and pick the [b]Nasrid Sultanate of Granada[/b] (tag NSR) from the country list. It has no bookmark portrait, so search for "Granada". Open the [b]Decisions[/b] tab first: most of the pre-war game happens in [i]The State Within the State[/i] and [i]The Call to Hijrah[/i].
+
+[h2]Compatibility[/h2]
+[list]
+[*]Overrides the Road to 56 state files for Sevilla (169) and Granada (173), and six Spanish unit files, to move Spanish units out of Nasrid land.
+[*]Not compatible with other mods that change Andalusia's states.
+[*]Everything else is new content (NSR tag, NSR_ prefixed files), so it won't affect other countries.
+[/list]
+
+[h2]Credits[/h2]
+[list]
+[*][b]Ikhwan unit model and textures:[/b] the Saudi infantry model from [i]Kaiserreich Models - Base Game[/i] by the [b]Kaiserreich Team[/b], used under the [url=https://kaiserreich.wiki/Usage_Policy]Kaiserreich Usage Policy[/url]. This mod is not affiliated with or endorsed by the Kaiserreich Team.
+[*][b]Road to 56[/b] and its team, for the base mod this submod builds on.
+[*]Historical portraits and the Ikhwan flag come from Wikimedia Commons. Sources and licences are listed in CREDITS.md in the mod folder.
+[*]Portraits of fictional characters, and of historical figures with no surviving photograph, are AI-generated and marked as such.
+[/list]
+
+[hr][/hr]
+[i]This is a work of alternate-history fiction about a historical movement and its people. It is meant to tell a story, not to endorse any ideology.[/i]
