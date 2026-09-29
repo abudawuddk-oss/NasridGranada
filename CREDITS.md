@@ -27,5 +27,9 @@ The balance-of-power icons for **Tamkin** and **Jihad** are AI-generated emblems
 ## Other flags
 The Nasrid, Constitutional, Commune and al-Andalus flags are original designs made for this mod. The cosmetic flags *Ikhwan of Najd* and *Emirate of al-Andalus* (v3) reuse the Ikhwan flag.
 
+## 3D unit models (Ikhwan soldiers)
+The Ikhwan land units use the **Saudi infantry model (with shemagh) from Kaiserreich**, made by the **Kaiserreich Team** for *Kaiserreich Models - Base Game* (Steam Workshop 2364431052). Files: `gfx/models/units/KR_SAU_infantry.mesh` and `KR_SAU_infantry_diffuse/_normal/_spec.dds`. They are used unchanged under the Kaiserreich Usage Policy (credit given, non-commercial): https://kaiserreich.wiki/Usage_Policy. This mod is not affiliated with or endorsed by the Kaiserreich Team.
+The unit setup (`gfx/entities/NSR_ikhwan_units.gfx/.asset`) is based on Road to 56's Algerian infantry entities. Horses, weapons and vehicles are Road to 56 / vanilla assets referenced by name. The smoking idle animation was removed.
+
 ## Game art
 Focus icons, event pictures and national-spirit pictures not listed here are vanilla Hearts of Iron IV or Road to 56 sprites. They are referenced by name only, and no files are copied.
