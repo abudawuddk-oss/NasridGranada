@@ -1,0 +1,1461 @@
+### Explanation:
+# 'Universal' enum, e.g 'ship_hull_light' applies to every hull
+# 'Individual' enums, e.g 'ship_hull_light_1, 2, 3 & 4' are applied to their corresponding hull (1 = interwar, 4 = advanced etc) on top of universal, 
+# adding instead of overwriting
+# For the model list, priority goes bottom up; so most important model last
+# USA splinters are also here, but trimmed down slightly
+# - Cosmo4378
+
+
+### USA ###
+USA = {
+	
+	##################
+	### Destroyers ###
+	################## 
+
+		ship_hull_light = {
+			pool = {
+				weight = 1900.01
+
+				icons = { #include 2d icons here if wanted. Possibly overwrites others, so be careful
+				}
+				models = {
+					USA_destroyer_0_entity # Fletcher
+				}
+			}
+		}
+
+		ship_hull_light_1 = {
+			pool = {
+				weight = 1922.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_2 = {
+			pool = {
+				weight = 1936.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_3 = {
+			pool = {
+				weight = 1940.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_4 = {
+			pool = {
+				weight = 1942.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		### Since there aren't many models, I'm only fully doing the destroyer as an example, and cutting corners on the rest. Apart from Carriers, which are weird.
+
+
+	##################
+	#### Cruisers ####
+	################## 
+
+		### Light Cruisers ###
+
+		ship_hull_cruiser = {
+				pool = {
+					weight = 1900.02
+
+					icons = {
+					}
+					models = {
+						USA_light_cruiser_entity # Brooklyn
+					}
+				}
+			}
+
+		### Heavy Cruisers ###
+
+		ship_hull_cruiser = {
+			pool = {
+				weight = 1900.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_1 = {
+			pool = {
+				weight = 1922.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_2 = {
+			pool = {
+				weight = 1936.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_entity # Baltimore
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_3 = {
+			pool = {
+				weight = 1940.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+					
+				}
+			}
+		}
+
+		ship_hull_cruiser_4 = {
+			pool = {
+				weight = 1943.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+				}
+			}
+		}
+
+	####################################
+	#### Battleships/Battlecruisers ####
+	####################################
+
+		### Battleships ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_1 = {
+			pool = {
+				weight = 1922.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_2 = {
+			pool = {
+				weight = 1936.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_3 = {
+			pool = {
+				weight = 1940.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		ship_hull_heavy_4 = {
+			pool = {
+				weight = 1943.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		### Battlecruisers ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.05
+					sub_units = { battle_cruiser }
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+	##################
+	#### Carriers ####
+	################## 
+
+		### '#The games does not recognize ship_hull_carrier_4 as an equipment type. The last (fourth) tier is ship_hull_carrier_3 and the first tier is ship_hull_carrier'
+		# '#All carriers need to exist in all tiers to avoid issues where models are not selectable.'
+		# According to Paradox in 06_wostp_ship_icons.txt
+
+		ship_hull_carrier = {
+			pool = {
+				weight = 1922.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				carrier_0_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_1 = {
+			pool = {
+				weight = 1936.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_2 = {
+			pool = {
+				weight = 1939.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_3 = {
+			pool = {
+				weight = 1943.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+
+	}
+
+
+### WCA ###
+WCA = {
+	
+	##################
+	### Destroyers ###
+	################## 
+
+		ship_hull_light = {
+			pool = {
+				weight = 1900.01
+
+				icons = { #include 2d icons here if wanted. Possibly overwrites others, so be careful
+				}
+				models = {
+					USA_destroyer_0_entity # Fletcher
+				}
+			}
+		}
+
+		ship_hull_light_1 = {
+			pool = {
+				weight = 1922.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_2 = {
+			pool = {
+				weight = 1936.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_3 = {
+			pool = {
+				weight = 1940.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_4 = {
+			pool = {
+				weight = 1942.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		### Since there aren't many models, I'm only fully doing the destroyer as an example, and cutting corners on the rest. Apart from Carriers, which are weird.
+
+
+	##################
+	#### Cruisers ####
+	################## 
+
+		### Light Cruisers ###
+
+		ship_hull_cruiser = {
+				pool = {
+					weight = 1900.02
+
+					icons = {
+					}
+					models = {
+						USA_light_cruiser_entity # Brooklyn
+					}
+				}
+			}
+
+		### Heavy Cruisers ###
+
+		ship_hull_cruiser = {
+			pool = {
+				weight = 1900.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_1 = {
+			pool = {
+				weight = 1922.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_2 = {
+			pool = {
+				weight = 1936.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_entity # Baltimore
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_3 = {
+			pool = {
+				weight = 1940.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+					
+				}
+			}
+		}
+
+		ship_hull_cruiser_4 = {
+			pool = {
+				weight = 1943.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+				}
+			}
+		}
+
+	####################################
+	#### Battleships/Battlecruisers ####
+	####################################
+
+		### Battleships ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_1 = {
+			pool = {
+				weight = 1922.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_2 = {
+			pool = {
+				weight = 1936.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_3 = {
+			pool = {
+				weight = 1940.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		ship_hull_heavy_4 = {
+			pool = {
+				weight = 1943.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		### Battlecruisers ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.05
+					sub_units = { battle_cruiser }
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+	##################
+	#### Carriers ####
+	################## 
+
+		### '#The games does not recognize ship_hull_carrier_4 as an equipment type. The last (fourth) tier is ship_hull_carrier_3 and the first tier is ship_hull_carrier'
+		# '#All carriers need to exist in all tiers to avoid issues where models are not selectable.'
+		# According to Paradox in 06_wostp_ship_icons.txt
+
+		ship_hull_carrier = {
+			pool = {
+				weight = 1922.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				carrier_0_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_1 = {
+			pool = {
+				weight = 1936.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_2 = {
+			pool = {
+				weight = 1939.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_3 = {
+			pool = {
+				weight = 1943.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+
+	}
+
+### APG ###
+APG = {
+	
+	##################
+	### Destroyers ###
+	################## 
+
+		ship_hull_light = {
+			pool = {
+				weight = 1900.01
+
+				icons = { #include 2d icons here if wanted. Possibly overwrites others, so be careful
+				}
+				models = {
+					USA_destroyer_0_entity # Fletcher
+				}
+			}
+		}
+
+		ship_hull_light_1 = {
+			pool = {
+				weight = 1922.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_2 = {
+			pool = {
+				weight = 1936.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_3 = {
+			pool = {
+				weight = 1940.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_4 = {
+			pool = {
+				weight = 1942.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		### Since there aren't many models, I'm only fully doing the destroyer as an example, and cutting corners on the rest. Apart from Carriers, which are weird.
+
+
+	##################
+	#### Cruisers ####
+	################## 
+
+		### Light Cruisers ###
+
+		ship_hull_cruiser = {
+				pool = {
+					weight = 1900.02
+
+					icons = {
+					}
+					models = {
+						USA_light_cruiser_entity # Brooklyn
+					}
+				}
+			}
+
+		### Heavy Cruisers ###
+
+		ship_hull_cruiser = {
+			pool = {
+				weight = 1900.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_1 = {
+			pool = {
+				weight = 1922.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_2 = {
+			pool = {
+				weight = 1936.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_entity # Baltimore
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_3 = {
+			pool = {
+				weight = 1940.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+					
+				}
+			}
+		}
+
+		ship_hull_cruiser_4 = {
+			pool = {
+				weight = 1943.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+				}
+			}
+		}
+
+	####################################
+	#### Battleships/Battlecruisers ####
+	####################################
+
+		### Battleships ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_1 = {
+			pool = {
+				weight = 1922.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_2 = {
+			pool = {
+				weight = 1936.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_3 = {
+			pool = {
+				weight = 1940.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		ship_hull_heavy_4 = {
+			pool = {
+				weight = 1943.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		### Battlecruisers ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.05
+					sub_units = { battle_cruiser }
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+	##################
+	#### Carriers ####
+	################## 
+
+		### '#The games does not recognize ship_hull_carrier_4 as an equipment type. The last (fourth) tier is ship_hull_carrier_3 and the first tier is ship_hull_carrier'
+		# '#All carriers need to exist in all tiers to avoid issues where models are not selectable.'
+		# According to Paradox in 06_wostp_ship_icons.txt
+
+		ship_hull_carrier = {
+			pool = {
+				weight = 1922.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				carrier_0_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_1 = {
+			pool = {
+				weight = 1936.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_2 = {
+			pool = {
+				weight = 1939.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_3 = {
+			pool = {
+				weight = 1943.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+
+	}
+
+
+### ACC ##
+ACC = {
+	
+	##################
+	### Destroyers ###
+	################## 
+
+		ship_hull_light = {
+			pool = {
+				weight = 1900.01
+
+				icons = { #include 2d icons here if wanted. Possibly overwrites others, so be careful
+				}
+				models = {
+					USA_destroyer_0_entity # Fletcher
+				}
+			}
+		}
+
+		ship_hull_light_1 = {
+			pool = {
+				weight = 1922.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_2 = {
+			pool = {
+				weight = 1936.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_3 = {
+			pool = {
+				weight = 1940.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_4 = {
+			pool = {
+				weight = 1942.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		### Since there aren't many models, I'm only fully doing the destroyer as an example, and cutting corners on the rest. Apart from Carriers, which are weird.
+
+
+	##################
+	#### Cruisers ####
+	################## 
+
+		### Light Cruisers ###
+
+		ship_hull_cruiser = {
+				pool = {
+					weight = 1900.02
+
+					icons = {
+					}
+					models = {
+						USA_light_cruiser_entity # Brooklyn
+					}
+				}
+			}
+
+		### Heavy Cruisers ###
+
+		ship_hull_cruiser = {
+			pool = {
+				weight = 1900.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_1 = {
+			pool = {
+				weight = 1922.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_2 = {
+			pool = {
+				weight = 1936.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_entity # Baltimore
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_3 = {
+			pool = {
+				weight = 1940.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+					
+				}
+			}
+		}
+
+		ship_hull_cruiser_4 = {
+			pool = {
+				weight = 1943.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+				}
+			}
+		}
+
+	####################################
+	#### Battleships/Battlecruisers ####
+	####################################
+
+		### Battleships ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_1 = {
+			pool = {
+				weight = 1922.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_2 = {
+			pool = {
+				weight = 1936.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_3 = {
+			pool = {
+				weight = 1940.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		ship_hull_heavy_4 = {
+			pool = {
+				weight = 1943.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		### Battlecruisers ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.05
+					sub_units = { battle_cruiser }
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+	##################
+	#### Carriers ####
+	################## 
+
+		### '#The games does not recognize ship_hull_carrier_4 as an equipment type. The last (fourth) tier is ship_hull_carrier_3 and the first tier is ship_hull_carrier'
+		# '#All carriers need to exist in all tiers to avoid issues where models are not selectable.'
+		# According to Paradox in 06_wostp_ship_icons.txt
+
+		ship_hull_carrier = {
+			pool = {
+				weight = 1922.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				carrier_0_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_1 = {
+			pool = {
+				weight = 1936.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_2 = {
+			pool = {
+				weight = 1939.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_3 = {
+			pool = {
+				weight = 1943.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+
+	}
+
+
+### NEE ###
+NEE = {
+	
+	##################
+	### Destroyers ###
+	################## 
+
+		ship_hull_light = {
+			pool = {
+				weight = 1900.01
+
+				icons = { #include 2d icons here if wanted. Possibly overwrites others, so be careful
+				}
+				models = {
+					USA_destroyer_0_entity # Fletcher
+				}
+			}
+		}
+
+		ship_hull_light_1 = {
+			pool = {
+				weight = 1922.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_2 = {
+			pool = {
+				weight = 1936.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_3 = {
+			pool = {
+				weight = 1940.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		ship_hull_light_4 = {
+			pool = {
+				weight = 1942.01
+
+				icons = {
+				}
+				models = {
+				}
+			}
+		}
+
+		### Since there aren't many models, I'm only fully doing the destroyer as an example, and cutting corners on the rest. Apart from Carriers, which are weird.
+
+
+	##################
+	#### Cruisers ####
+	################## 
+
+		### Light Cruisers ###
+
+		ship_hull_cruiser = {
+				pool = {
+					weight = 1900.02
+
+					icons = {
+					}
+					models = {
+						USA_light_cruiser_entity # Brooklyn
+					}
+				}
+			}
+
+		### Heavy Cruisers ###
+
+		ship_hull_cruiser = {
+			pool = {
+				weight = 1900.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_1 = {
+			pool = {
+				weight = 1922.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_2 = {
+			pool = {
+				weight = 1936.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_entity # Baltimore
+					USA_heavy_cruiser_0_entity # Pensacola
+				}
+			}
+		}
+
+		ship_hull_cruiser_3 = {
+			pool = {
+				weight = 1940.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+					
+				}
+			}
+		}
+
+		ship_hull_cruiser_4 = {
+			pool = {
+				weight = 1943.03
+					sub_units = { heavy_cruiser }
+				icons = {
+				}
+				models = {
+					USA_heavy_cruiser_0_entity # Pensacola
+					USA_heavy_cruiser_entity # Baltimore
+				}
+			}
+		}
+
+	####################################
+	#### Battleships/Battlecruisers ####
+	####################################
+
+		### Battleships ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_1 = {
+			pool = {
+				weight = 1922.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_2 = {
+			pool = {
+				weight = 1936.04
+				icons = {
+				}
+				models = {
+					USA_battleship_entity #Missouri
+					USA_battleship_0_entity #New Mexico
+				}
+			}
+		}
+
+		ship_hull_heavy_3 = {
+			pool = {
+				weight = 1940.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		ship_hull_heavy_4 = {
+			pool = {
+				weight = 1943.04
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+		### Battlecruisers ###
+		
+		ship_hull_heavy = {
+			pool = {
+				weight = 1900.05
+					sub_units = { battle_cruiser }
+				icons = {
+				}
+				models = {
+					USA_battleship_0_entity #New Mexico
+					USA_battleship_entity #Missouri
+				}
+			}
+		}
+
+	##################
+	#### Carriers ####
+	################## 
+
+		### '#The games does not recognize ship_hull_carrier_4 as an equipment type. The last (fourth) tier is ship_hull_carrier_3 and the first tier is ship_hull_carrier'
+		# '#All carriers need to exist in all tiers to avoid issues where models are not selectable.'
+		# According to Paradox in 06_wostp_ship_icons.txt
+
+		ship_hull_carrier = {
+			pool = {
+				weight = 1922.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				carrier_0_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_1 = {
+			pool = {
+				weight = 1936.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_2 = {
+			pool = {
+				weight = 1939.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+		ship_hull_carrier_3 = {
+			pool = {
+				weight = 1943.05
+
+				icons = {
+				}
+				models = {
+				carrier_entity
+				}
+			}
+		}
+
+
+	}
