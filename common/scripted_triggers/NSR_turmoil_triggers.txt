@@ -1,0 +1,18 @@
+# v3 phase 1: pre-war turmoil
+NSR_prewar_turmoil = {
+	original_tag = NSR
+	has_power_balance = { id = NSR_dual_power_bop }
+	NOT = { has_country_flag = NSR_fitna_started }
+	NOT = { has_country_flag = NSR_ikhwan_coup_done }
+}
+# state scope: this state would join the loyalists at the civil war
+NSR_state_goes_loyalist = {
+	is_capital = no
+	OR = {
+		has_state_flag = NSR_loyalist_forced
+		AND = {
+			NOT = { check_variable = { NSR_hold > 49 } }
+			NOT = { has_state_flag = NSR_garrison_won }
+		}
+	}
+}

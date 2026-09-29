@@ -1,0 +1,70 @@
+ideas = {
+	country = {
+		NSR_court_suspicion = {
+			picture = generic_courts
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.10
+			}
+		}
+		NSR_divided_army = {
+			picture = POL_divided_nation
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.05
+				army_morale_factor = -0.05
+			}
+		}
+		NSR_fitna_al_andalus = {
+			picture = PAL_islamic_militarism
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				stability_factor = -0.10
+				army_org_factor = 0.05
+			}
+		}
+		NSR_ikhwan_military_advisors = {
+			picture = SAU_incorporate_nomad_tactics
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.03
+				experience_gain_army = 0.05
+			}
+		}
+		NSR_shura_of_the_sheikhs = {
+			picture = PAL_true_islamic_democracy
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.3
+			}
+		}
+		NSR_parallel_emirate = {
+			picture = AFG_pillars_islam
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.05
+				political_power_gain = 0.10
+				stability_factor = -0.05
+				conscription = 0.01
+			}
+		}
+		NSR_the_sultans_cause = {
+			picture = BEL_extended_royal_powers
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				army_defence_factor = 0.05
+			}
+		}
+	}
+}

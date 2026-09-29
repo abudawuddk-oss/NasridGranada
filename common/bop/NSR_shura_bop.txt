@@ -1,0 +1,98 @@
+# The Shura of the Brethren: one brotherhood deciding its priority (NOT factions).
+# Left (negative) = Tamkin, firmly establishing the state. Right (positive) = Jihad, the banner beyond the Sierra.
+# Set on tag NSR by NSR_setup_emirate (phase 3).
+NSR_shura_bop = {
+	initial_value = 0
+	left_side = NSR_bop_tamkin
+	right_side = NSR_bop_jihad
+	decision_category = NSR_shura_category
+
+	range = {
+		id = NSR_bop_amir_consults
+		min = -0.2
+		max = 0.2
+		modifier = {
+			political_power_gain = 0.10
+			stability_factor = 0.03
+		}
+	}
+
+	side = {
+		id = NSR_bop_tamkin
+		icon = GFX_NSR_bop_tamkin
+		range = {
+			id = NSR_bop_tamkin_leaning
+			min = -0.6
+			max = -0.2
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				political_advisor_cost_factor = -0.15
+				research_speed_factor = 0.03
+				stability_factor = 0.03
+			}
+		}
+		range = {
+			id = NSR_bop_tamkin_dominant
+			min = -1
+			max = -0.6
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				political_advisor_cost_factor = -0.25
+				industrial_capacity_factory = 0.05
+				research_speed_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = -0.10
+				experience_gain_army_factor = -0.15
+			}
+			on_activate = {
+				if = {
+					limit = { NOT = { has_country_flag = NSR_frontier_tested } }
+					set_country_flag = { flag = NSR_frontier_tested days = 365 value = 1 }
+					country_event = { id = nsr_emirate.1 days = 20 }
+				}
+			}
+		}
+	}
+
+	side = {
+		id = NSR_bop_jihad
+		icon = GFX_NSR_bop_jihad
+		range = {
+			id = NSR_bop_jihad_leaning
+			min = 0.2
+			max = 0.6
+			modifier = {
+				war_support_factor = 0.05
+				army_chief_cost_factor = -0.15
+				high_command_cost_factor = -0.15
+				army_attack_factor = 0.03
+				conscription = 0.005
+			}
+		}
+		range = {
+			id = NSR_bop_jihad_dominant
+			min = 0.6
+			max = 1
+			modifier = {
+				war_support_factor = 0.10
+				army_chief_cost_factor = -0.25
+				high_command_cost_factor = -0.25
+				army_attack_factor = 0.05
+				conscription = 0.01
+				experience_gain_army_factor = 0.15
+				consumer_goods_factor = 0.03
+				research_speed_factor = -0.05
+				trade_opinion_factor = -0.10
+			}
+			on_activate = {
+				country_event = { id = nsr_emirate.2 days = 30 }
+			}
+			on_deactivate = {
+				if = {
+					limit = { has_idea = NSR_hijras_weary }
+					remove_ideas = NSR_hijras_weary
+				}
+			}
+		}
+	}
+}

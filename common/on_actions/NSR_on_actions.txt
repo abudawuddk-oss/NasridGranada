@@ -1,0 +1,17 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = { country_exists = NSR }
+				NSR = {
+					country_event = { id = nsr.1 days = 1 }
+					# nsr.2 (The Exiles of Sabilla) is now fired by the focus NSR_p_exiles_of_sabilla
+					if = {
+						limit = { country_exists = SAU }
+						country_event = { id = nsr.10 days = 150 random_days = 60 }
+					}
+				}
+			}
+		}
+	}
+}

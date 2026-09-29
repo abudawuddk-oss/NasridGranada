@@ -1,0 +1,43 @@
+NSR_INF_01 = {
+	name = "Firqat al-Mushat"
+	for_countries = { NSR }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "Firqat al-Mushat %d"
+	ordered = {
+		1 = { "Firqat Gharnata al-Ula" }
+		2 = { "Firqat Malaqa" }
+		3 = { "Firqat Ishbiliya" }
+		4 = { "Firqat Qadis" }
+		5 = { "Firqat Wadi Ash" }
+		6 = { "Firqat al-Mariyya" }
+		7 = { "Firqat Runda" }
+	}
+}
+NSR_CAV_01 = {
+	name = "Liwa al-Ikhwan"
+	for_countries = { NSR }
+	can_use = { always = yes }
+	division_types = { "cavalry" }
+	fallback_name = "Liwa al-Ikhwan %d"
+	ordered = {
+		1 = { "Liwa Mutayr" }
+		2 = { "Liwa Utaybah" }
+		3 = { "Liwa al-Ajman" }
+		4 = { "Liwa al-Artawiya" }
+		5 = { "Liwa al-Ghatghat" }
+		6 = { "Liwa al-Sabilla" }
+	}
+}
+NSR_GRD_01 = {
+	name = "Haras al-Sultan"
+	for_countries = { NSR }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "Haras al-Sultan %d"
+	ordered = {
+		1 = { "Haras al-Hamra" }
+		2 = { "Haras al-Sabika" }
+		3 = { "Haras al-Albaicin" }
+	}
+}

@@ -1,0 +1,5 @@
+# Loaded by the focuses "Arm the Hijras" (pre-war tree) and "Mobilise the Hijras" (Ikhwani tree).
+# Exactly ONE Liwa al-Ikhwan: both focuses add 1 to the NSR_ikhwan_divs counter afterwards.
+units = {
+	division = { location = 12038 division_template = "Liwa al-Ikhwan" start_experience_factor = 0.3 start_equipment_factor = 0.8 }
+}

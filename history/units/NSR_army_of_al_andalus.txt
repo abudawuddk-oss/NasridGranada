@@ -1,0 +1,6 @@
+# Loaded by focus NSR_army_of_al_andalus (Military branch)
+units = {
+	division = { location = 1176 division_template = "Firqat al-Mushat" start_experience_factor = 0.3 start_equipment_factor = 0.7 }
+	division = { location = 7183 division_template = "Firqat al-Mushat" start_experience_factor = 0.3 start_equipment_factor = 0.7 }
+	division = { location = 9979 division_template = "Firqat al-Mushat" start_experience_factor = 0.3 start_equipment_factor = 0.7 }
+}

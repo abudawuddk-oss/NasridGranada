@@ -1,0 +1,21 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = { country_exists = NSR }
+				NSR = {
+					NSR_init_turmoil = yes
+					country_event = { id = nsr.200 days = 7 }
+				}
+			}
+		}
+	}
+	on_weekly_NSR = {
+		effect = {
+			if = {
+				limit = { NSR_prewar_turmoil = yes }
+				NSR_weekly_turmoil = yes
+			}
+		}
+	}
+}

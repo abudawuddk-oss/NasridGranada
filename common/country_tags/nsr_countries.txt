@@ -1,0 +1,3 @@
+# New country tag for the Nasrid Sultanate of Granada.
+# NOTE: "GRA" is already used by Road to 56 (Grenada), so we use NSR.
+NSR = "countries/Nasrid Granada.txt"

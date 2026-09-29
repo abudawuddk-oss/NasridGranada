@@ -1,0 +1,15 @@
+units = {
+	fleet = {
+		name = "Ustul al-Madiq"		# Fleet of the Strait
+		naval_base = 9979			# Málaga
+		task_force = {
+			name = "Ustul al-Madiq"
+			location = 9979
+			ship = { name = "Tariq ibn Ziyad" pride_of_the_fleet = yes definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = NSR version_name = "Tariq Class" } } }
+			ship = { name = "Abd al-Rahman" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = NSR version_name = "Tariq Class" } } }
+			ship = { name = "Ibn al-Ahmar" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = NSR version_name = "Tariq Class" } } }
+			ship = { name = "Al-Mansur" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = NSR version_name = "Al-Mansur Class" } } }
+			ship = { name = "Al-Zaghal" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = NSR version_name = "Al-Mansur Class" } } }
+		}
+	}
+}

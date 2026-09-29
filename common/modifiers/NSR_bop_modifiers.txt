@@ -1,0 +1,19 @@
+# Weekly drift of the Dual Power bar. Added with add_power_balance_modifier.
+NSR_bop_court_vigilance = {
+	power_balance_weekly = -0.002
+}
+NSR_bop_mutawwa_preaching = {
+	power_balance_weekly = 0.005
+}
+NSR_bop_qadi_courts = {
+	power_balance_weekly = 0.002
+}
+NSR_bop_hijrah_wave = {
+	power_balance_weekly = 0.006
+}
+NSR_bop_court_stipends = {
+	power_balance_weekly = -0.004
+}
+NSR_bop_lying_low = {
+	power_balance_weekly = -0.003
+}

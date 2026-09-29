@@ -1,0 +1,6 @@
+# Graphics culture decides generic unit models and generic portraits
+graphical_culture = middle_eastern_gfx
+graphical_culture_2d = middle_eastern_2d
+
+# Map colour: Nasrid crimson
+color = { 150 18 38 }

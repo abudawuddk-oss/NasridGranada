@@ -1,0 +1,70 @@
+add_namespace = nsr_news
+
+news_event = {
+	id = nsr_news.1
+	title = nsr_news.1.t
+	desc = nsr_news.1.d
+	picture = GFX_news_event_generic_arab_revolt
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = nsr_news.1.a
+		trigger = {
+			tag = NSR
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = nsr_news.1.b
+		trigger = {
+			NOT = { tag = NSR }
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+news_event = {
+	id = nsr_news.2
+	title = nsr_news.2.t
+	desc = nsr_news.2.d
+	picture = GFX_news_event_generic_rally
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = nsr_news.2.a
+		trigger = {
+			tag = NSR
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = nsr_news.2.b
+		trigger = {
+			NOT = { tag = NSR }
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+news_event = {
+	id = nsr_news.3
+	title = nsr_news.3.t
+	desc = nsr_news.3.d
+	picture = GFX_news_event_generic_rally
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = nsr_news.3.a
+		trigger = {
+			tag = NSR
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = nsr_news.3.b
+		trigger = {
+			NOT = { tag = NSR }
+		}
+		ai_chance = { factor = 1 }
+	}
+}

@@ -1,0 +1,18 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_NSR_bop_tamkin"
+		texturefile = "gfx/interface/bop/NSR_bop_tamkin.dds"
+	}
+	spriteType = {
+		name = "GFX_NSR_bop_jihad"
+		texturefile = "gfx/interface/bop/NSR_bop_jihad.dds"
+	}
+	spriteType = {
+		name = "GFX_NSR_bop_court"
+		texturefile = "gfx/interface/bop/NSR_bop_court.dds"
+	}
+	spriteType = {
+		name = "GFX_NSR_bop_brethren"
+		texturefile = "gfx/interface/bop/NSR_bop_brethren.dds"
+	}
+}

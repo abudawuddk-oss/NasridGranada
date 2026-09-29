@@ -1,0 +1,512 @@
+characters = {
+	NSR_muhammad_xiv = {
+		name = NSR_muhammad_xiv
+		portraits = {
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_sultan_muhammad_xiv.dds" small = "gfx/interface/ideas/NSR/idea_nsr_sultan_muhammad_xiv.dds" }
+		}
+		country_leader = {
+			ideology = constitutional_monarchy
+			traits = { NSR_last_nasrid }
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+
+	NSR_ibrahim_ibn_zamrak = {
+		name = NSR_ibrahim_ibn_zamrak
+		portraits = {
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_ibrahim_ibn_zamrak.dds" small = "gfx/interface/ideas/NSR/idea_nsr_ibrahim_ibn_zamrak.dds" }
+		}
+		country_leader = {
+			ideology = islamic_democracy
+			traits = { }
+			expire = "1965.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_ibrahim_ibn_zamrak_adv
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				NOT = { has_government = democratic }
+			}
+			traits = { NSR_grand_vizier }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_yahya_al_ansari = {
+		name = NSR_yahya_al_ansari
+		portraits = {
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_yahya_al_ansari.dds" small = "gfx/interface/ideas/NSR/idea_nsr_yahya_al_ansari.dds" }
+		}
+		country_leader = {
+			ideology = islamic_socialism
+			traits = { }
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+
+	NSR_musa_abi_al_ghassan = {
+		name = NSR_musa_abi_al_ghassan
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_musa_abi_al_ghassan.dds" small = "gfx/interface/ideas/NSR/idea_nsr_musa_abi_al_ghassan.dds" }
+		}
+		field_marshal = {
+			traits = { career_officer brilliant_strategist hill_fighter }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NSR_musa_abi_al_ghassan_hc
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				always = yes
+			}
+			traits = { army_chief_defensive_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_ridwan_bannigash = {
+		name = NSR_ridwan_bannigash
+		corps_commander = {
+			traits = { career_officer trait_mountaineer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	NSR_ali_al_attar = {
+		name = NSR_ali_al_attar
+		navy_leader = {
+			traits = { }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+			legacy_id = -1
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = NSR_ali_al_attar_nc
+			ledger = navy
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				always = yes
+			}
+			traits = { navy_chief_commerce_raiding_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_abu_al_qasim_al_sarraj = {
+		name = NSR_abu_al_qasim_al_sarraj
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_abu_al_qasim_al_sarraj
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				always = yes
+			}
+			traits = { captain_of_industry }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_yusuf_ibn_kumasha = {
+		name = NSR_yusuf_ibn_kumasha
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_yusuf_ibn_kumasha
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				always = yes
+			}
+			traits = { silent_workhorse }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_faisal_al_dawish = {
+		name = NSR_faisal_al_dawish
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_faisal_al_dawish.dds" small = "gfx/interface/ideas/NSR/idea_nsr_faisal_al_dawish.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_faisal_al_dawish.dds" small = "gfx/interface/ideas/NSR/idea_nsr_faisal_al_dawish.dds" }
+		}
+		country_leader = {
+			ideology = islamism
+			traits = { NSR_the_sheikh_of_mutayr }
+			expire = "1965.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { war_hero cavalry_officer inspirational_leader desert_fox }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_faisal_al_dawish_pol
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+				NOT = { has_idea = NSR_faisal_al_dawish_hc }
+			}
+			traits = { NSR_supreme_sheikh }
+			ai_will_do = { factor = 1 }
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NSR_faisal_al_dawish_hc
+			ledger = army
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+				NOT = { has_idea = NSR_faisal_al_dawish_pol }
+			}
+			traits = { army_cavalry_3 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_sultan_bin_bajad = {
+		name = NSR_sultan_bin_bajad
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_sultan_bin_bajad.dds" small = "gfx/interface/ideas/NSR/idea_nsr_sultan_bin_bajad.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_sultan_bin_bajad.dds" small = "gfx/interface/ideas/NSR/idea_nsr_sultan_bin_bajad.dds" }
+		}
+		corps_commander = {
+			traits = { old_guard harsh_leader aggressive_assaulter offensive_doctrine }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+		advisor = {
+			slot = theorist
+			idea_token = NSR_sultan_bin_bajad_th
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+				NSR_bajad_theorist_ready = yes
+				NOT = { has_idea = NSR_sultan_bin_bajad_pol }
+			}
+			traits = { military_theorist }
+			ai_will_do = { factor = 1 }
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_sultan_bin_bajad_pol
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+				NOT = { has_idea = NSR_sultan_bin_bajad_th }
+			}
+			traits = { NSR_firebrand_of_the_ikhwan }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_dhaydan_bin_hithlain = {
+		name = NSR_dhaydan_bin_hithlain
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_dhaydan_bin_hithlain.dds" small = "gfx/interface/ideas/NSR/idea_nsr_dhaydan_bin_hithlain.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_dhaydan_bin_hithlain.dds" small = "gfx/interface/ideas/NSR/idea_nsr_dhaydan_bin_hithlain.dds" }
+		}
+		corps_commander = {
+			traits = { cavalry_officer cavalry_leader politically_connected }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NSR_dhaydan_bin_hithlain_ac
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+				NOT = { has_idea = NSR_dhaydan_bin_hithlain_pol }
+			}
+			traits = { army_chief_maneuver_2 }
+			ai_will_do = { factor = 1 }
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_dhaydan_bin_hithlain_pol
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+				NOT = { has_idea = NSR_dhaydan_bin_hithlain_ac }
+			}
+			traits = { NSR_tribal_diplomat }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_azaiyiz_al_dawish = {
+		name = NSR_azaiyiz_al_dawish
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_azaiyiz_al_dawish.dds" small = "gfx/interface/ideas/NSR/idea_nsr_azaiyiz_al_dawish.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_azaiyiz_al_dawish.dds" small = "gfx/interface/ideas/NSR/idea_nsr_azaiyiz_al_dawish.dds" }
+		}
+		corps_commander = {
+			traits = { cavalry_officer trait_reckless cavalry_leader }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NSR_azaiyiz_al_dawish_hc
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+			}
+			traits = { army_cavalry_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_meqaid_al_duhainah = {
+		name = NSR_meqaid_al_duhainah
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_meqaid_al_duhainah.dds" small = "gfx/interface/ideas/NSR/idea_nsr_meqaid_al_duhainah.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_meqaid_al_duhainah.dds" small = "gfx/interface/ideas/NSR/idea_nsr_meqaid_al_duhainah.dds" }
+		}
+		corps_commander = {
+			traits = { trait_reckless brave }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NSR_meqaid_al_duhainah_hc
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+			}
+			traits = { army_infantry_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_farhan_bin_mashhur = {
+		name = NSR_farhan_bin_mashhur
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_farhan_bin_mashhur.dds" small = "gfx/interface/ideas/NSR/idea_nsr_farhan_bin_mashhur.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_farhan_bin_mashhur.dds" small = "gfx/interface/ideas/NSR/idea_nsr_farhan_bin_mashhur.dds" }
+		}
+		corps_commander = {
+			traits = { irregulars_officer commando ambusher }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NSR_farhan_bin_mashhur_hc
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+			}
+			traits = { army_commando_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_murdhi_al_rafdi = {
+		name = NSR_murdhi_al_rafdi
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_murdhi_al_rafdi.dds" small = "gfx/interface/ideas/NSR/idea_nsr_murdhi_al_rafdi.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_murdhi_al_rafdi.dds" small = "gfx/interface/ideas/NSR/idea_nsr_murdhi_al_rafdi.dds" }
+		}
+		corps_commander = {
+			traits = { irregulars_officer trickster skirmisher }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NSR_murdhi_al_rafdi_hc
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+			}
+			traits = { army_concealment_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_naif_bin_hithlain = {
+		name = NSR_naif_bin_hithlain
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_naif_bin_hithlain.dds" small = "gfx/interface/ideas/NSR/idea_nsr_naif_bin_hithlain.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_naif_bin_hithlain.dds" small = "gfx/interface/ideas/NSR/idea_nsr_naif_bin_hithlain.dds" }
+		}
+		corps_commander = {
+			traits = { cavalry_officer politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_naif_bin_hithlain_pol
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+				NOT = { has_idea = NSR_dhaydan_bin_hithlain_pol }
+			}
+			traits = { NSR_tribal_diplomat }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_eqab_bin_mohaya = {
+		name = NSR_eqab_bin_mohaya
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_eqab_bin_mohaya.dds" small = "gfx/interface/ideas/NSR/idea_nsr_eqab_bin_mohaya.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_eqab_bin_mohaya.dds" small = "gfx/interface/ideas/NSR/idea_nsr_eqab_bin_mohaya.dds" }
+		}
+		corps_commander = {
+			traits = { cavalry_officer offensive_doctrine brave }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NSR_eqab_bin_mohaya_ac
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+			}
+			traits = { army_chief_morale_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_majed_bin_khuthaila = {
+		name = NSR_majed_bin_khuthaila
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_majed_bin_khuthaila.dds" small = "gfx/interface/ideas/NSR/idea_nsr_majed_bin_khuthaila.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_majed_bin_khuthaila.dds" small = "gfx/interface/ideas/NSR/idea_nsr_majed_bin_khuthaila.dds" }
+		}
+		corps_commander = {
+			traits = { old_guard career_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = NSR_majed_bin_khuthaila_pol
+			cost = 150
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+			}
+			traits = { silent_workhorse }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+	NSR_khalid_bin_luwai = {
+		name = NSR_khalid_bin_luwai
+		portraits = {
+			army = { large = "gfx/leaders/NSR/portrait_nsr_khalid_bin_luwai.dds" small = "gfx/interface/ideas/NSR/idea_nsr_khalid_bin_luwai.dds" }
+			civilian = { large = "gfx/leaders/NSR/portrait_nsr_khalid_bin_luwai.dds" small = "gfx/interface/ideas/NSR/idea_nsr_khalid_bin_luwai.dds" }
+		}
+		corps_commander = {
+			traits = { cavalry_officer war_hero }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NSR_khalid_bin_luwai_hc
+			ledger = army
+			cost = 100
+			allowed = { original_tag = NSR }
+			available = {
+				NSR_ikhwan_active = yes
+			}
+			traits = { army_regrouping_2 }
+			ai_will_do = { factor = 1 }
+		}
+	}
+
+}

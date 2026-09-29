@@ -1,0 +1,320 @@
+# ==========================================================
+#  The Ikhwan seize power (used by the coup event)
+# ==========================================================
+NSR_ikhwan_takeover = {
+	set_country_flag = NSR_fitna_started
+	if = {
+		limit = { has_power_balance = { id = NSR_dual_power_bop } }
+		remove_power_balance = { id = NSR_dual_power_bop }
+	}
+	set_politics = { ruling_party = fascism elections_allowed = no }
+	add_popularity = { ideology = fascism popularity = 0.20 }
+	# v3: Faisal al-Dawish leads the Brethren. Fallback: his son Azaiyiz, then Sultan bin Bajad.
+	if = {
+		limit = { has_character = NSR_faisal_al_dawish }
+		remove_advisor_role = { character = NSR_faisal_al_dawish slot = political_advisor }
+		remove_advisor_role = { character = NSR_faisal_al_dawish slot = high_command }
+		promote_character = NSR_faisal_al_dawish
+	}
+	else_if = {
+		limit = { has_character = NSR_azaiyiz_al_dawish }
+		add_country_leader_role = {
+			character = NSR_azaiyiz_al_dawish
+			country_leader = {
+				ideology = islamism
+				traits = { NSR_amir_of_al_andalus }
+				expire = "1975.1.1"
+			}
+			promote_leader = yes
+		}
+	}
+	else_if = {
+		limit = { has_character = NSR_sultan_bin_bajad }
+		add_country_leader_role = {
+			character = NSR_sultan_bin_bajad
+			country_leader = {
+				ideology = islamism
+				traits = { NSR_amir_of_al_andalus }
+				expire = "1975.1.1"
+			}
+			promote_leader = yes
+		}
+	}
+	# In a civil war the Sultan has already left for the loyalists; this only fires in the bloodless takeover.
+	if = {
+		limit = { has_character = NSR_muhammad_xiv }
+		retire_character = NSR_muhammad_xiv
+	}
+	set_country_flag = NSR_ikhwan_coup_done
+	set_global_flag = NSR_ikhwan_coup_done_global
+}
+
+############################################################################
+# CIVIL WAR HELPERS (v2.0.1)
+# The game normally hands characters and divisions out at random in a civil
+# war. These effects replace that with fixed rules:
+#   * every Ikhwan figure and every Ikhwan division goes to the Ikhwani side
+#   * the Sultan and his Andalusi court go to the Sultan's side
+#   * the regular army is still split at random (start_civil_war size)
+# Always use them INSIDE a start_civil_war block that has
+# keep_all_characters = yes. There THIS = the breakaway, PREV = the original.
+############################################################################
+
+# +1 to the Ikhwan division counter (called wherever Ikhwan divisions are raised)
+NSR_count_ikhwan_division = {
+	add_to_variable = { NSR_ikhwan_divs = 1 }
+}
+
+# Breakaway = the Ikhwani rebels. Moves every Ikhwan figure to them.
+NSR_cw_ikhwan_figures_to_breakaway = {
+	PREV = {
+		if = {
+			limit = { has_character = NSR_faisal_al_dawish }
+			NSR_faisal_al_dawish = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_sultan_bin_bajad }
+			NSR_sultan_bin_bajad = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_dhaydan_bin_hithlain }
+			NSR_dhaydan_bin_hithlain = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_azaiyiz_al_dawish }
+			NSR_azaiyiz_al_dawish = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_meqaid_al_duhainah }
+			NSR_meqaid_al_duhainah = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_farhan_bin_mashhur }
+			NSR_farhan_bin_mashhur = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_murdhi_al_rafdi }
+			NSR_murdhi_al_rafdi = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_naif_bin_hithlain }
+			NSR_naif_bin_hithlain = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_eqab_bin_mohaya }
+			NSR_eqab_bin_mohaya = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_majed_bin_khuthaila }
+			NSR_majed_bin_khuthaila = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = { has_character = NSR_khalid_bin_luwai }
+			NSR_khalid_bin_luwai = { set_nationality = PREV.PREV }
+		}
+	}
+	# The Najd brothers, if they have not reached Granada yet, cross over to join the revolt
+	if = {
+		limit = {
+			PREV = { NOT = { has_country_flag = NSR_najd_brothers_joined } }
+			NOT = { any_country = { has_character = NSR_eqab_bin_mohaya } }
+		}
+		recruit_character = NSR_eqab_bin_mohaya
+		recruit_character = NSR_majed_bin_khuthaila
+		recruit_character = NSR_khalid_bin_luwai
+		PREV = { set_country_flag = NSR_najd_brothers_joined }
+	}
+}
+
+# Breakaway = the Sultan's loyalists. Moves the Sultan and his court to them.
+NSR_cw_court_figures_to_breakaway = {
+	# v3: court figures won over by the Brethren (NSR_sided_with_ikhwan) stay with the Ikhwan
+	PREV = {
+		if = {
+			limit = { has_character = NSR_muhammad_xiv }
+			NSR_muhammad_xiv = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = {
+				has_character = NSR_ibrahim_ibn_zamrak
+				NOT = { NSR_ibrahim_ibn_zamrak = { has_character_flag = NSR_sided_with_ikhwan } }
+			}
+			NSR_ibrahim_ibn_zamrak = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = {
+				has_character = NSR_yahya_al_ansari
+				NOT = { NSR_yahya_al_ansari = { has_character_flag = NSR_sided_with_ikhwan } }
+			}
+			NSR_yahya_al_ansari = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = {
+				has_character = NSR_musa_abi_al_ghassan
+				NOT = { NSR_musa_abi_al_ghassan = { has_character_flag = NSR_sided_with_ikhwan } }
+			}
+			NSR_musa_abi_al_ghassan = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = {
+				has_character = NSR_ridwan_bannigash
+				NOT = { NSR_ridwan_bannigash = { has_character_flag = NSR_sided_with_ikhwan } }
+			}
+			NSR_ridwan_bannigash = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = {
+				has_character = NSR_ali_al_attar
+				NOT = { NSR_ali_al_attar = { has_character_flag = NSR_sided_with_ikhwan } }
+			}
+			NSR_ali_al_attar = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = {
+				has_character = NSR_abu_al_qasim_al_sarraj
+				NOT = { NSR_abu_al_qasim_al_sarraj = { has_character_flag = NSR_sided_with_ikhwan } }
+			}
+			NSR_abu_al_qasim_al_sarraj = { set_nationality = PREV.PREV }
+		}
+		if = {
+			limit = {
+				has_character = NSR_yusuf_ibn_kumasha
+				NOT = { NSR_yusuf_ibn_kumasha = { has_character_flag = NSR_sided_with_ikhwan } }
+			}
+			NSR_yusuf_ibn_kumasha = { set_nationality = PREV.PREV }
+		}
+	}
+	if = {
+		limit = { has_character = NSR_muhammad_xiv }
+		promote_character = NSR_muhammad_xiv
+	}
+}
+
+# Breakaway = the Ikhwani rebels. Makes Faisal al-Dawish (or his heir) Amir,
+# and gives them the Ikhwani Emirate name and the Ikhwan flag.
+NSR_cw_setup_ikhwani_breakaway = {
+	set_cosmetic_tag = NSR_ikhwani
+	set_country_flag = NSR_ikhwan_rebels
+	set_country_flag = NSR_ikhwan_coup_done
+	set_politics = { ruling_party = fascism elections_allowed = no }
+	add_popularity = { ideology = fascism popularity = 0.30 }
+	if = {
+		limit = { has_character = NSR_faisal_al_dawish }
+		remove_advisor_role = { character = NSR_faisal_al_dawish slot = political_advisor }
+		remove_advisor_role = { character = NSR_faisal_al_dawish slot = high_command }
+		promote_character = NSR_faisal_al_dawish
+	}
+	else_if = {
+		limit = { has_character = NSR_azaiyiz_al_dawish }
+		add_country_leader_role = {
+			character = NSR_azaiyiz_al_dawish
+			country_leader = {
+				ideology = islamism
+				traits = { NSR_amir_of_al_andalus }
+				expire = "1975.1.1"
+			}
+			promote_leader = yes
+		}
+	}
+	else_if = {
+		limit = { has_character = NSR_sultan_bin_bajad }
+		add_country_leader_role = {
+			character = NSR_sultan_bin_bajad
+			country_leader = {
+				ideology = islamism
+				traits = { NSR_amir_of_al_andalus }
+				expire = "1975.1.1"
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+# Breakaway = the Ikhwani rebels. Every Ikhwan division (Liwa al-Ikhwan) leaves
+# the original country and is re-formed on the rebel side.
+NSR_cw_ikhwan_units_to_breakaway = {
+	PREV = {
+		set_global_variable = { NSR_cw_ikhwan_divs = NSR_ikhwan_divs }
+		set_variable = { NSR_ikhwan_divs = 0 }
+		if = {
+			limit = { has_template = "Liwa al-Ikhwan" }
+			delete_units = { division_template = "Liwa al-Ikhwan" disband = no }
+		}
+	}
+	if = {
+		limit = { has_template = "Liwa al-Ikhwan" }
+		delete_units = { division_template = "Liwa al-Ikhwan" disband = no }
+	}
+	if = {
+		limit = { NOT = { has_template = "Liwa al-Ikhwan" } }
+		division_template = {
+			name = "Liwa al-Ikhwan"
+			division_names_group = NSR_CAV_01
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 0 y = 1 }
+				cavalry = { x = 1 y = 0 }
+				cavalry = { x = 1 y = 1 }
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { global.NSR_cw_ikhwan_divs > 30 } }
+		set_global_variable = { NSR_cw_ikhwan_divs = 30 }
+	}
+	set_variable = { NSR_ikhwan_divs = global.NSR_cw_ikhwan_divs }
+	while_loop_effect = {
+		limit = { check_variable = { global.NSR_cw_ikhwan_divs > 0 } }
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"Liwa al-Ikhwan\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
+				owner = PREV
+			}
+		}
+		subtract_from_variable = { global.NSR_cw_ikhwan_divs = 1 }
+	}
+}
+
+# Breakaway = the Sultan's loyalists. Any Ikhwan division the random split gave
+# them goes back to the Ikhwani (original) country.
+NSR_cw_ikhwan_units_stay_home = {
+	if = {
+		limit = { has_template = "Liwa al-Ikhwan" }
+		delete_units = { division_template = "Liwa al-Ikhwan" disband = no }
+	}
+	PREV = {
+		if = {
+			limit = { has_template = "Liwa al-Ikhwan" }
+			delete_units = { division_template = "Liwa al-Ikhwan" disband = no }
+		}
+		if = {
+			limit = { NOT = { has_template = "Liwa al-Ikhwan" } }
+			division_template = {
+				name = "Liwa al-Ikhwan"
+				division_names_group = NSR_CAV_01
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+				}
+			}
+		}
+		set_global_variable = { NSR_cw_ikhwan_divs = NSR_ikhwan_divs }
+		if = {
+			limit = { check_variable = { global.NSR_cw_ikhwan_divs > 30 } }
+			set_global_variable = { NSR_cw_ikhwan_divs = 30 }
+		}
+		while_loop_effect = {
+			limit = { check_variable = { global.NSR_cw_ikhwan_divs > 0 } }
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Liwa al-Ikhwan\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
+					owner = PREV
+					prioritize_location = 12038
+				}
+			}
+			subtract_from_variable = { global.NSR_cw_ikhwan_divs = 1 }
+		}
+	}
+}

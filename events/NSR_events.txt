@@ -1,0 +1,506 @@
+add_namespace = nsr
+
+country_event = {
+	id = nsr.1
+	title = nsr.1.t
+	desc = nsr.1.d
+	picture = GFX_report_event_king_speech
+	is_triggered_only = yes
+	option = {
+		name = nsr.1.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.2
+	title = nsr.2.t
+	desc = nsr.2.d
+	picture = GFX_report_event_nsr_exiles_of_sabilla
+	is_triggered_only = yes
+	option = {
+		name = nsr.2.a
+		ai_chance = { factor = 1 }
+		army_experience = 5
+	}
+}
+
+country_event = {
+	id = nsr.10
+	title = nsr.10.t
+	desc = nsr.10.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	trigger = {
+		country_exists = SAU
+		NOT = { has_country_flag = NSR_saudi_reconciled }
+		NOT = { has_country_flag = NSR_fitna_started }
+	}
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					country_exists = SAU
+					NOT = { has_country_flag = NSR_saudi_reconciled }
+					NOT = { has_country_flag = NSR_fitna_started }
+				}
+				country_event = { id = nsr.10 days = 365 random_days = 180 }
+			}
+		}
+	}
+	option = {
+		name = nsr.10.a
+		ai_chance = { factor = 3 }
+		add_war_support = 0.03
+		add_power_balance_value = { id = NSR_dual_power_bop value = 0.03 tooltip_side = NSR_bop_ikhwan_side }
+		if = {
+			limit = { country_exists = SAU }
+			SAU = { add_opinion_modifier = { target = ROOT modifier = NSR_extradition_refused } }
+		}
+	}
+	option = {
+		name = nsr.10.b
+		trigger = {
+			has_character = NSR_meqaid_al_duhainah
+			NOT = { has_country_flag = NSR_ikhwan_coup_done }
+			NOT = { has_country_flag = NSR_p_refuse_the_king }
+		}
+		ai_chance = { factor = 1 }
+		if = {
+			limit = { has_character = NSR_meqaid_al_duhainah }
+			retire_character = NSR_meqaid_al_duhainah
+		}
+		add_power_balance_value = { id = NSR_dual_power_bop value = -0.08 tooltip_side = NSR_bop_court_side }
+		custom_effect_tooltip = NSR_tt_fitna_p10
+		hidden_effect = {
+			add_to_variable = { NSR_fitna = 10 }
+			NSR_clamp_turmoil = yes
+		}
+		add_stability = -0.03
+		if = {
+			limit = { country_exists = SAU }
+			SAU = { add_opinion_modifier = { target = ROOT modifier = NSR_ikhwan_handed_over } }
+		}
+		set_country_flag = NSR_handed_over_meqaid
+	}
+}
+
+country_event = {
+	id = nsr.12
+	title = nsr.12.t
+	desc = nsr.12.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = nsr.12.a
+		ai_chance = { factor = 2 }
+		remove_opinion_modifier = { target = FROM modifier = NSR_harbours_ikhwan }
+		FROM = { set_country_flag = NSR_saudi_reconciled country_event = { id = nsr.13 days = 1 } }
+	}
+	option = {
+		name = nsr.12.b
+		ai_chance = { factor = 1 }
+		FROM = { country_event = { id = nsr.14 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.13
+	title = nsr.13.t
+	desc = nsr.13.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+	option = {
+		name = nsr.13.a
+		ai_chance = { factor = 1 }
+		add_political_power = 50
+		add_stability = 0.03
+		add_power_balance_value = { id = NSR_dual_power_bop value = -0.05 tooltip_side = NSR_bop_court_side }
+	}
+}
+
+country_event = {
+	id = nsr.14
+	title = nsr.14.t
+	desc = nsr.14.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = nsr.14.a
+		ai_chance = { factor = 1 }
+		add_war_support = 0.03
+	}
+}
+
+country_event = {
+	id = nsr.20
+	title = nsr.20.t
+	desc = nsr.20.d
+	picture = GFX_report_event_soldiers_marching
+	fire_only_once = yes
+	trigger = {
+		tag = NSR
+		NOT = { has_country_flag = NSR_fitna_started }
+		any_country = { original_tag = SPR has_civil_war = yes }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	option = {
+		name = nsr.20.a
+		ai_chance = { factor = 1 }
+		add_war_support = 0.05
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = nsr.50
+	title = nsr.50.t
+	desc = nsr.50.d
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	trigger = {
+		tag = NSR
+		has_country_flag = NSR_ikhwan_coup_done
+		date > 1941.1.1
+		has_country_leader = { character = NSR_faisal_al_dawish ruling_only = yes }
+	}
+	mean_time_to_happen = {
+		days = 1500
+	}
+	option = {
+		name = nsr.50.a
+		trigger = {
+			has_character = NSR_azaiyiz_al_dawish
+		}
+		ai_chance = { factor = 2 }
+		add_country_leader_role = {
+			character = NSR_azaiyiz_al_dawish
+			country_leader = {
+				ideology = islamism
+				traits = { NSR_amir_of_al_andalus }
+				expire = "1975.1.1"
+			}
+			promote_leader = yes
+		}
+		retire_character = NSR_faisal_al_dawish
+	}
+	option = {
+		name = nsr.50.b
+		trigger = {
+			has_character = NSR_sultan_bin_bajad
+		}
+		ai_chance = { factor = 1 }
+		add_country_leader_role = {
+			character = NSR_sultan_bin_bajad
+			country_leader = {
+				ideology = islamism
+				traits = { NSR_amir_of_al_andalus }
+				expire = "1975.1.1"
+			}
+			promote_leader = yes
+		}
+		retire_character = NSR_faisal_al_dawish
+		add_war_support = 0.05
+	}
+	option = {
+		name = nsr.50.c
+		trigger = {
+			NOT = { has_character = NSR_azaiyiz_al_dawish }
+			NOT = { has_character = NSR_sultan_bin_bajad }
+		}
+		ai_chance = { factor = 1 }
+		retire_character = NSR_faisal_al_dawish
+		add_stability = -0.05
+	}
+}
+
+country_event = {
+	id = nsr.60
+	title = nsr.60.t
+	desc = nsr.60.d
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = NSR_najd_brothers_joined }
+	}
+	option = {
+		name = nsr.60.a
+		ai_chance = { factor = 1 }
+		recruit_character = NSR_eqab_bin_mohaya
+		recruit_character = NSR_majed_bin_khuthaila
+		recruit_character = NSR_khalid_bin_luwai
+		set_country_flag = NSR_najd_brothers_joined
+	}
+}
+
+country_event = {
+	id = nsr.62
+	title = nsr.62.t
+	desc = nsr.62.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = nsr.62.a
+		ai_chance = { factor = 2 }
+		add_stability = -0.05
+		add_political_power = -50
+		FROM = { add_political_power = 100 add_stability = 0.05 country_event = { id = nsr.63 days = 1 } }
+	}
+	option = {
+		name = nsr.62.b
+		ai_chance = { factor = 1 }
+		FROM = { create_wargoal = { type = topple_government target = ROOT } country_event = { id = nsr.64 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.63
+	title = nsr.63.t
+	desc = nsr.63.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+	option = {
+		name = nsr.63.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.64
+	title = nsr.64.t
+	desc = nsr.64.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = {
+		name = nsr.64.a
+		ai_chance = { factor = 1 }
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	id = nsr.71
+	title = nsr.71.t
+	desc = nsr.71.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = nsr.71.a
+		ai_chance = { factor = 1 }
+		FROM = { add_ideas = NSR_gibraltar_condominium country_event = { id = nsr.72 days = 1 } }
+		add_opinion_modifier = { target = FROM modifier = NSR_anglo_nasrid_friendship }
+	}
+	option = {
+		name = nsr.71.b
+		ai_chance = { factor = 2 }
+		FROM = { add_state_claim = 118 country_event = { id = nsr.73 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.72
+	title = nsr.72.t
+	desc = nsr.72.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+	option = {
+		name = nsr.72.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.73
+	title = nsr.73.t
+	desc = nsr.73.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = nsr.73.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.80
+	title = nsr.80.t
+	desc = nsr.80.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = {
+		name = nsr.80.a
+		ai_chance = { factor = 2 }
+		FROM = { add_ideas = NSR_turkish_military_mission add_opinion_modifier = { target = ROOT modifier = NSR_ottoman_friendship } country_event = { id = nsr.81 days = 1 } }
+		add_opinion_modifier = { target = FROM modifier = NSR_ottoman_friendship }
+	}
+	option = {
+		name = nsr.80.b
+		ai_chance = { factor = 1 }
+		FROM = { country_event = { id = nsr.82 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.81
+	title = nsr.81.t
+	desc = nsr.81.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+	option = {
+		name = nsr.81.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.82
+	title = nsr.82.t
+	desc = nsr.82.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = nsr.82.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.90
+	title = nsr.90.t
+	desc = nsr.90.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = nsr.90.a
+		ai_chance = { factor = 2 }
+		give_guarantee = FROM
+		FROM = { country_event = { id = nsr.92 days = 1 } }
+	}
+	option = {
+		name = nsr.90.b
+		ai_chance = { factor = 1 }
+		FROM = { country_event = { id = nsr.93 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.91
+	title = nsr.91.t
+	desc = nsr.91.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = nsr.91.a
+		ai_chance = { factor = 2 }
+		add_to_faction = FROM
+		FROM = { country_event = { id = nsr.92 days = 1 } }
+	}
+	option = {
+		name = nsr.91.b
+		ai_chance = { factor = 1 }
+		FROM = { country_event = { id = nsr.93 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.92
+	title = nsr.92.t
+	desc = nsr.92.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+	option = {
+		name = nsr.92.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.93
+	title = nsr.93.t
+	desc = nsr.93.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = nsr.93.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.95
+	title = nsr.95.t
+	desc = nsr.95.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+	option = {
+		name = nsr.95.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.106
+	title = nsr.106.t
+	desc = nsr.106.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = nsr.106.a
+		ai_chance = { factor = 1 }
+		FROM = { transfer_state = 179 }
+		FROM = { country_event = { id = nsr.110 days = 1 } }
+	}
+	option = {
+		name = nsr.106.b
+		ai_chance = { factor = 3 }
+		FROM = { create_wargoal = { type = take_state_focus target = ROOT generator = { 179 } } }
+		FROM = { country_event = { id = nsr.111 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.108
+	title = nsr.108.t
+	desc = nsr.108.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = nsr.108.a
+		ai_chance = { factor = 1 }
+		FROM = { transfer_state = 789 }
+		FROM = { country_event = { id = nsr.110 days = 1 } }
+	}
+	option = {
+		name = nsr.108.b
+		ai_chance = { factor = 2 }
+		FROM = { add_state_claim = 789 }
+		FROM = { country_event = { id = nsr.111 days = 1 } }
+	}
+}
+
+country_event = {
+	id = nsr.110
+	title = nsr.110.t
+	desc = nsr.110.d
+	picture = GFX_report_event_generic_handshake
+	is_triggered_only = yes
+	option = {
+		name = nsr.110.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = nsr.111
+	title = nsr.111.t
+	desc = nsr.111.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = nsr.111.a
+		ai_chance = { factor = 1 }
+		add_war_support = 0.03
+	}
+}

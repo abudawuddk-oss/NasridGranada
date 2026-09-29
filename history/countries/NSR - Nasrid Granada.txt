@@ -1,0 +1,166 @@
+﻿# ==========================================================
+#  NASRID SULTANATE OF GRANADA - 1936 start
+#  Alternate history: Granada never fell in 1492.
+#  In 1930 the Sultan gave asylum to the Ikhwan exiles of Sabilla.
+# ==========================================================
+capital = 173
+
+oob = "NSR_1936"
+set_naval_oob = "NSR_1936_naval_mtg"
+
+set_country_flag = hispanic
+
+set_research_slots = 3
+set_stability = 0.55
+set_war_support = 0.25
+set_convoys = 20
+
+set_variable = { NSR_ikhwan_divs = 2 }	# Ikhwan divisions (Liwa al-Ikhwan), see NSR_count_ikhwan_division
+
+# ---- v3: the Ikhwan crisis (pre-war systems, see common/bop and NSR_turmoil_effects.txt)
+set_variable = { NSR_fitna = 10 }			# the Fitna clock (0-100)
+set_variable = { NSR_army_loyalty = 20 }	# share of the army that backs the Brethren (0-100)
+set_variable = { NSR_muhajirun = 4 }		# emigrants waiting to be settled (thousands)
+set_variable = { NSR_bayt_al_mal = 0 }		# treasury of the Brethren
+set_variable = { NSR_inst_hijras = 1 }		# the five parallel institutions (0-3)
+set_variable = { NSR_inst_qadis = 0 }
+set_variable = { NSR_inst_bayt_al_mal = 0 }
+set_variable = { NSR_inst_mutawwa = 0 }
+set_variable = { NSR_inst_militia = 0 }
+set_variable = { NSR_court_timer = 12 }		# weeks until the court's first countermove
+set_variable = { NSR_flavor_timer = 6 }		# weeks until the first flavour event of the hijras
+set_power_balance = {
+	id = NSR_dual_power_bop
+	left_side = NSR_bop_court_side
+	right_side = NSR_bop_ikhwan_side
+	set_default = yes
+}
+add_power_balance_modifier = { id = NSR_dual_power_bop modifier = NSR_bop_court_vigilance }
+
+add_ideas = {
+	NSR_legacy_of_the_alhambra
+	NSR_multi_faith_sultanate
+	NSR_spanish_shadow
+	NSR_protector_of_the_strait
+	limited_exports
+}
+
+# --- Diplomacy at game start ---
+if = {
+	limit = { country_exists = SAU }
+	SAU = { add_opinion_modifier = { target = NSR modifier = NSR_harbours_ikhwan } }
+}
+ENG = { add_opinion_modifier = { target = NSR modifier = NSR_anglo_nasrid_friendship } }
+add_opinion_modifier = { target = ENG modifier = NSR_anglo_nasrid_friendship }
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	tech_trucks = 1
+
+	# Naval Technologies
+	basic_naval_mines = 1
+	early_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	basic_battery = 1
+	basic_torpedo = 1
+	basic_depth_charges = 1
+	mtg_transport = 1
+}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_technology = {
+		iw_small_airframe = 1
+		engines_1 = 1
+		aa_lmg = 1
+	}
+	else = {
+		set_technology = {
+			early_fighter = 1
+		}
+	}
+}
+
+# --- Ship designs ---
+create_equipment_variant = {
+	name = "Tariq Class"
+	type = ship_hull_light_1
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+		mid_1_custom_slot = empty
+		rear_1_custom_slot = empty
+	}
+}
+create_equipment_variant = {
+	name = "Al-Mansur Class"
+	type = ship_hull_submarine_1
+	parent_version = 0
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+		rear_1_custom_slot = empty
+	}
+}
+
+# --- Characters (defined in common/characters/NSR.txt) ---
+recruit_character = NSR_muhammad_xiv
+recruit_character = NSR_ibrahim_ibn_zamrak
+recruit_character = NSR_yahya_al_ansari
+recruit_character = NSR_musa_abi_al_ghassan
+recruit_character = NSR_ridwan_bannigash
+recruit_character = NSR_ali_al_attar
+recruit_character = NSR_abu_al_qasim_al_sarraj
+recruit_character = NSR_yusuf_ibn_kumasha
+# The Ikhwan exiles
+recruit_character = NSR_faisal_al_dawish
+recruit_character = NSR_sultan_bin_bajad
+recruit_character = NSR_dhaydan_bin_hithlain
+recruit_character = NSR_azaiyiz_al_dawish
+recruit_character = NSR_meqaid_al_duhainah
+recruit_character = NSR_farhan_bin_mashhur
+recruit_character = NSR_murdhi_al_rafdi
+recruit_character = NSR_naif_bin_hithlain
+# NSR_eqab_bin_mohaya, NSR_majed_bin_khuthaila and NSR_khalid_bin_luwai join later by event
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1933.11.19"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 25
+	fascism = 18
+	communism = 7
+	neutrality = 50
+}
+
+# ==========================================================
+1939.1.1 = {
+	# ---- v3  the 1939 start - the crisis is far along.
+	# NSR_setup_late_start (called on startup) completes the early focuses and sets the values.
+	set_country_flag = NSR_late_start
+	set_technology = {
+		infantry_weapons2 = 1
+		tech_mountaineers2 = 1
+		interwar_artillery = 1
+		basic_ship_hull_light = 1
+		basic_ship_hull_submarine = 1
+		basic_light_battery = 1
+	}
+}

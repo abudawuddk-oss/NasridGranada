@@ -1,0 +1,47 @@
+NSR_is_ikhwani_emirate = {
+	has_country_flag = NSR_ikhwan_coup_done
+}
+# v3: the Ikhwan sheikhs serve as advisors once the Brethren teach in the army (or once the Fitna has begun)
+NSR_ikhwan_active = {
+	custom_trigger_tooltip = {
+		tooltip = NSR_ikhwan_active_tt
+		OR = {
+			has_country_flag = NSR_p_ikhwan_instructors
+			has_country_flag = NSR_fitna_started
+		}
+	}
+}
+NSR_bajad_theorist_ready = {
+	custom_trigger_tooltip = {
+		tooltip = NSR_bajad_theorist_ready_tt
+		OR = {
+			has_country_flag = NSR_p_oath_of_artawiya
+			has_country_flag = NSR_fitna_started
+		}
+	}
+}
+NSR_controls_all_iberia = {
+	custom_trigger_tooltip = {
+		tooltip = NSR_controls_all_iberia_tt
+		controls_state = 41
+		controls_state = 165
+		controls_state = 166
+		controls_state = 167
+		controls_state = 168
+		controls_state = 169
+		controls_state = 170
+		controls_state = 171
+		controls_state = 172
+		controls_state = 173
+		controls_state = 174
+		controls_state = 175
+		controls_state = 176
+		controls_state = 788
+		controls_state = 789
+		controls_state = 790
+		controls_state = 791
+		controls_state = 792
+		controls_state = 793
+		controls_state = 794
+	}
+}

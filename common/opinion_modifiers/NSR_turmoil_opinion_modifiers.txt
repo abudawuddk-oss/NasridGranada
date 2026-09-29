@@ -1,0 +1,30 @@
+opinion_modifiers = {
+	NSR_hijrah_rif = {
+		value = -15
+		decay = 0.5
+	}
+	NSR_hijrah_maghreb = {
+		value = -20
+		decay = 0.5
+	}
+	NSR_hijrah_egypt = {
+		value = -10
+		decay = 0.5
+	}
+	NSR_hijrah_india = {
+		value = -15
+		decay = 0.5
+	}
+	NSR_hijrah_najd = {
+		value = -25
+		decay = 0.5
+	}
+	NSR_hijrah_balkans = {
+		value = -10
+		decay = 0.5
+	}
+	NSR_consul_report = {
+		value = -20
+		decay = 0.5
+	}
+}

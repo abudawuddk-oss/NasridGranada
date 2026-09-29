@@ -1,0 +1,50 @@
+# ---- Ikhwan presence in a state (one of four tiers, chosen by NSR_refresh_presence from the state variable NSR_hold)
+NSR_ikhwan_presence_1 = {
+	icon = GFX_idea_AFG_pillars_islam
+	enable = { always = yes }
+	local_manpower = 0.02
+	custom_modifier_tooltip = NSR_presence_hold_tt
+}
+NSR_ikhwan_presence_2 = {
+	icon = GFX_idea_AFG_pillars_islam
+	enable = { always = yes }
+	local_manpower = 0.05
+	local_resources_factor = -0.02
+	custom_modifier_tooltip = NSR_presence_hold_tt
+}
+NSR_ikhwan_presence_3 = {
+	icon = GFX_idea_PAL_islamic_militarism
+	enable = { always = yes }
+	local_manpower = 0.08
+	local_resources_factor = -0.05
+	custom_modifier_tooltip = NSR_presence_hold_tt
+}
+NSR_ikhwan_presence_4 = {
+	icon = GFX_idea_PAL_islamic_militarism
+	enable = { always = yes }
+	local_manpower = 0.12
+	local_resources_factor = -0.05
+	local_supplies = 0.10
+	custom_modifier_tooltip = NSR_presence_hold_tt
+}
+
+# ---- Hijra settlements in a state (state variables NSR_hijra_count and NSR_hijra_mp)
+NSR_hijra_settlement = {
+	icon = GFX_idea_PAL_islamic_schools
+	enable = { always = yes }
+	local_building_slots = NSR_hijra_count
+	local_manpower = NSR_hijra_mp
+	custom_modifier_tooltip = NSR_hijra_settlement_tt
+}
+
+# ---- The State Within the State (country; values set by NSR_refresh_sws from the five institutions)
+NSR_state_within_state_dm = {
+	icon = GFX_idea_PAL_true_islamic_democracy
+	enable = { always = yes }
+	remove_trigger = { has_country_flag = NSR_fitna_started }
+	monthly_population = NSR_sws_pop
+	stability_factor = NSR_sws_stab
+	fascism_drift = NSR_sws_drift
+	training_time_army_factor = NSR_sws_train
+	custom_modifier_tooltip = NSR_sws_tt
+}

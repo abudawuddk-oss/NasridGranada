@@ -1,0 +1,63 @@
+# Custom country-leader and advisor traits for the Nasrid Sultanate of Granada
+leader_traits = {
+	# ----- Country leader traits -----
+	NSR_last_nasrid = {
+		random = no
+		sprite = 1
+		stability_factor = 0.05
+		political_power_gain = 0.1
+		ai_will_do = { factor = 1 }
+	}
+	NSR_absolute_sultan = {
+		random = no
+		sprite = 1
+		stability_factor = 0.10
+		political_power_gain = 0.15
+		democratic_drift = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	NSR_the_sheikh_of_mutayr = {
+		random = no
+		sprite = 1
+		war_support_factor = 0.05
+		cavalry_attack_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	NSR_amir_of_al_andalus = {
+		random = no
+		sprite = 1
+		war_support_factor = 0.10
+		stability_factor = 0.05
+		political_power_gain = 0.10
+		army_org_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	# ----- Advisor traits -----
+	NSR_grand_vizier = {
+		random = no
+		political_power_factor = 0.10
+		democratic_drift = 0.03
+		ai_will_do = { factor = 1 }
+	}
+	NSR_supreme_sheikh = {
+		random = no
+		war_support_factor = 0.05
+		cavalry_attack_factor = 0.05
+		fascism_drift = 0.03
+		stability_factor = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	NSR_firebrand_of_the_ikhwan = {
+		random = no
+		war_support_factor = 0.10
+		fascism_drift = 0.05
+		stability_factor = -0.05
+		ai_will_do = { factor = 1 }
+	}
+	NSR_tribal_diplomat = {
+		random = no
+		stability_factor = 0.05
+		conscription = 0.01
+		ai_will_do = { factor = 1 }
+	}
+}

@@ -1,0 +1,72 @@
+# The Dual Power: the Nasrid Court (left, negative) against the Brethren (right, positive)
+# Initialised in the country history (set_power_balance). Removed just before the civil war.
+NSR_dual_power_bop = {
+	initial_value = -0.2
+	left_side = NSR_bop_court_side
+	right_side = NSR_bop_ikhwan_side
+	decision_category = NSR_state_within_state_category
+
+	range = {
+		id = NSR_bop_uneasy_balance
+		min = -0.2
+		max = 0.2
+		modifier = {
+			political_power_gain = 0.05
+		}
+	}
+
+	side = {
+		id = NSR_bop_court_side
+		icon = GFX_NSR_bop_court
+		range = {
+			id = NSR_bop_court_ahead
+			min = -0.6
+			max = -0.2
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		range = {
+			id = NSR_bop_court_dominant
+			min = -1
+			max = -0.6
+			modifier = {
+				stability_factor = 0.10
+				fascism_drift = -0.03
+				custom_modifier_tooltip = NSR_bop_court_dominant_tt
+			}
+		}
+	}
+
+	side = {
+		id = NSR_bop_ikhwan_side
+		icon = GFX_NSR_bop_brethren
+		range = {
+			id = NSR_bop_ikhwan_rising
+			min = 0.2
+			max = 0.6
+			modifier = {
+				fascism_drift = 0.03
+				army_org_factor = 0.03
+				stability_factor = -0.05
+			}
+		}
+		range = {
+			id = NSR_bop_ikhwan_dominant
+			min = 0.6
+			max = 1
+			modifier = {
+				fascism_drift = 0.05
+				war_support_factor = 0.10
+				stability_factor = -0.10
+			}
+			on_activate = {
+				if = {
+					limit = { NOT = { has_country_flag = NSR_state_within_state_fired } }
+					set_country_flag = NSR_state_within_state_fired
+					country_event = { id = nsr.230 days = 1 }
+				}
+			}
+		}
+	}
+}

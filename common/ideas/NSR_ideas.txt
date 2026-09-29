@@ -1,0 +1,441 @@
+ideas = {
+	country = {
+		# ================= STARTING SPIRITS =================
+		NSR_legacy_of_the_alhambra = {
+			picture = generic_royal_science
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		NSR_multi_faith_sultanate = {
+			picture = generic_scales_even
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.03
+				monthly_population = 0.05
+			}
+		}
+		NSR_spanish_shadow = {
+			picture = generic_cold_war
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = -0.05
+				political_power_gain = -0.1
+			}
+		}
+		NSR_protector_of_the_strait = {
+			picture = generic_straits_of_hormuz
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		# ================= PATH SPIRITS =================
+		NSR_tamed_ikhwan = {
+			picture = SAU_creative_general
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				cavalry_attack_factor = 0.10
+				army_org_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		NSR_ikhwan_disarmed = {
+			picture = generic_anti_extremism
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				democratic_drift = 0.02
+				army_attack_factor = -0.03
+			}
+		}
+		NSR_ulama_of_the_hijras = {
+			picture = PAL_islamic_schools
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				fascism_drift = 0.05
+				stability_factor = 0.03
+				research_speed_factor = -0.03
+			}
+		}
+		NSR_brethren_who_obey_god = {
+			picture = PAL_sharia
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				stability_factor = 0.05
+				conscription = 0.02
+				army_morale_factor = 0.05
+			}
+		}
+		NSR_jihad_against_the_reconquista = {
+			picture = PAL_frontsmen_fear_not_death
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				war_support_factor = 0.10
+				justify_war_goal_time = -0.25
+			}
+		}
+		NSR_machine_gun_brethren = {
+			picture = generic_soldiers_good
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.10
+				training_time_army_factor = -0.10
+			}
+		}
+		NSR_purity_of_the_charge = {
+			picture = JOR_terrain_experts
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				cavalry_attack_factor = 0.15
+				army_speed_factor = 0.05
+				experience_gain_army = 0.10
+			}
+		}
+		NSR_absolute_sultanate = {
+			picture = royal_army
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.15
+				neutrality_drift = 0.03
+			}
+		}
+		NSR_heir_to_cordoba = {
+			picture = TUR_caliph_abdulmejid_ii
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				research_speed_factor = 0.05
+			}
+		}
+		NSR_constitutional_sultanate = {
+			picture = generic_spread_democracy
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				democratic_drift = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		NSR_rights_of_the_three_faiths = {
+			picture = generic_courts
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				monthly_population = 0.10
+			}
+		}
+		NSR_university_of_the_alhambra = {
+			picture = generic_research_by_example
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.07
+			}
+		}
+		NSR_andalusi_commune = {
+			picture = generic_collectivization_idea
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.05
+				production_speed_buildings_factor = 0.10
+				stability_factor = -0.03
+			}
+		}
+		NSR_collective_vega = {
+			picture = generic_communist_economy
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				monthly_population = 0.05
+			}
+		}
+		NSR_strait_tolls = {
+			picture = generic_tariffs
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				consumer_goods_factor = -0.03
+			}
+		}
+		NSR_submarines_of_the_strait = {
+			picture = generic_submarine_wolves
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				navy_submarine_attack_factor = 0.10
+				navy_submarine_detection_factor = 0.10
+			}
+		}
+		NSR_sierra_warfare = {
+			picture = TIB_mountainous_people
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				attrition = -0.10
+			}
+		}
+		NSR_turkish_military_mission = {
+			picture = TUR_six_arrows
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.10
+				army_org_factor = 0.03
+			}
+		}
+		NSR_gibraltar_condominium = {
+			picture = generic_good_investment
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				political_power_gain = 0.05
+			}
+		}
+			# ================= v2 SPIRITS =================
+		NSR_convivencia = {
+			picture = generic_scales_even
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.08
+				monthly_population = 0.08
+				political_power_gain = 0.05
+			}
+		}
+		NSR_hisba_committees = {
+			picture = generic_censorship
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.08
+				fascism_drift = 0.03
+				research_speed_factor = -0.05
+			}
+		}
+		NSR_eternal_ghazu = {
+			picture = AFG_unyielding_resolve
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				cavalry_attack_factor = 0.15
+				cavalry_defence_factor = 0.1
+				army_speed_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		NSR_modern_emirate = {
+			picture = MON_mechanized_effort
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		NSR_royal_council = {
+			picture = BEL_extended_royal_powers
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.03
+			}
+		}
+		NSR_mukhabarat_al_sultan = {
+			picture = SPR_the_black_years_icon
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.07
+				communism_drift = -0.02
+				fascism_drift = -0.02
+				democratic_drift = -0.02
+			}
+		}
+		NSR_seat_of_the_caliphate = {
+			picture = TUR_caliph_abdulmejid_ii
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				political_power_gain = 0.15
+				conscription = 0.01
+			}
+		}
+		NSR_free_port_of_malaga = {
+			picture = generic_liberty_money
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.03
+				industrial_capacity_dockyard = 0.1
+				political_power_gain = 0.05
+			}
+		}
+		NSR_shura_democracy = {
+			picture = PAL_true_islamic_democracy
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.07
+				democratic_drift = 0.03
+				war_support_factor = 0.03
+			}
+		}
+		NSR_islamic_welfare_state = {
+			picture = AFG_red_crescent
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.1
+				stability_factor = 0.05
+				consumer_goods_factor = 0.02
+			}
+		}
+		NSR_federation_of_communes = {
+			picture = LIT_syndicalist_agriculture
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				stability_factor = 0.05
+				monthly_population = 0.05
+			}
+		}
+		NSR_red_army_of_al_andalus = {
+			picture = generic_communism
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				army_defence_factor = 0.05
+				conscription = 0.02
+			}
+		}
+		NSR_imperial_al_andalus = {
+			picture = generic_lead_by_example
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.1
+				stability_factor = 0.05
+				army_attack_factor = 0.05
+				political_power_gain = 0.1
+			}
+		}
+		NSR_national_bank = {
+			picture = AFG_bank_millie
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.03
+				political_power_gain = 0.05
+			}
+		}
+		NSR_irrigated_vega = {
+			picture = generic_okay_investment
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.1
+				stability_factor = 0.03
+			}
+		}
+		NSR_mediterranean_trade_league = {
+			picture = BUL_shared_manufacturing_experience
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		NSR_hydroelectric_sierra = {
+			picture = TUR_etatism_economy_law_idea
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		NSR_academy_of_sciences = {
+			picture = generic_research_by_example
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.07
+			}
+		}
+		NSR_andalusi_miracle = {
+			picture = generic_good_investment
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.1
+				production_factory_max_efficiency_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		NSR_andalusi_general_staff = {
+			picture = JAP_generic_land_3
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				experience_gain_army = 0.1
+				army_defence_factor = 0.05
+			}
+		}
+		NSR_corsairs_of_the_strait = {
+			picture = BRA_navy_pic
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				navy_submarine_attack_factor = 0.1
+				navy_org_factor = 0.1
+				experience_gain_navy = 0.1
+			}
+		}
+		NSR_heirs_of_ibn_firnas = {
+			picture = generic_air_mechanics
+			allowed = { original_tag = NSR }
+			removal_cost = -1
+			modifier = {
+				experience_gain_air = 0.15
+				research_speed_factor = 0.03
+			}
+		}
+	}
+}

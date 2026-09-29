@@ -1,0 +1,26 @@
+opinion_modifiers = {
+	NSR_harbours_ikhwan = {
+		value = -30
+	}
+	NSR_anglo_nasrid_friendship = {
+		value = 25
+	}
+	NSR_extradition_refused = {
+		value = -20
+		decay = 1
+	}
+	NSR_ikhwan_handed_over = {
+		value = 40
+		decay = 1
+	}
+	NSR_brothers_in_faith = {
+		value = 30
+	}
+	NSR_ottoman_friendship = {
+		value = 20
+	}
+	NSR_sheltered_caliph = {
+		value = -20
+		decay = 1
+	}
+}
